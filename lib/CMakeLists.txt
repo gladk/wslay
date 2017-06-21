@@ -40,17 +40,17 @@ set(SOURCES
 
 set(WSLAY_TARGETS)
 if(WSLAY_STATIC)
-	add_library(wslay STATIC ${SOURCES} ${HEADERS})
-	list(APPEND WSLAY_TARGETS wslay)
+	add_library(wslay_static STATIC ${SOURCES} ${HEADERS})
+	list(APPEND WSLAY_TARGETS wslay_static)
 endif()
 if(WSLAY_SHARED)
-	add_library(wslay_shared SHARED ${SOURCES} ${HEADERS})
-  set_target_properties(wslay_shared PROPERTIES
+	add_library(wslay SHARED ${SOURCES} ${HEADERS})
+  set_target_properties(wslay PROPERTIES
      VERSION ${_VERSION}
      SOVERSION ${_SOVERSION}
      OUTPUT_NAME wslay
   )
-	list(APPEND WSLAY_TARGETS wslay_shared)
+	list(APPEND WSLAY_TARGETS wslay)
 endif()
 
 foreach(target ${WSLAY_TARGETS})
