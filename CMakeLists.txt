@@ -13,8 +13,8 @@ endif()
 project(wslay)
 
 option(WSLAY_CONFIGURE_INSTALL "Generate install target" ON)
-option(WSLAY_STATIC "Build static version of the library" ON)
-option(WSLAY_SHARED "Build shared version of the library" OFF)
+option(WSLAY_STATIC "Build static version of the library" OFF)
+option(WSLAY_SHARED "Build shared version of the library" ON)
 option(WSLAY_EXAMPLES "Build examples" OFF)
 option(WSLAY_TESTS "Build tests" OFF)
 
