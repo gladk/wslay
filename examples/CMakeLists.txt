@@ -8,9 +8,9 @@ endif()
 find_package(Nettle REQUIRED)
 
 if(WSLAY_STATIC)
-	set(WSLAY_TARGET "wslay")
+	set(WSLAY_TARGET "wslay_static")
 else()
-	set(WSLAY_TARGET "wslay_shared")
+	set(WSLAY_TARGET "wslay")
 endif()
 
 add_executable(echoserv echoserv.cc)

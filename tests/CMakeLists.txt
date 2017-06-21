@@ -5,9 +5,9 @@ find_package(CUnit REQUIRED)
 # Choose a wslay target to get build options from.
 # That way we can avoid duplicating them here.
 if(WSLAY_STATIC)
-	set(WSLAY_TARGET "wslay")
+	set(WSLAY_TARGET "wslay_static")
 else()
-	set(WSLAY_TARGET "wslay_shared")
+	set(WSLAY_TARGET "wslay")
 endif()
 
 get_target_property(WSLAY_INCLUDE_DIRS
