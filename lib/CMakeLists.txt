@@ -5,6 +5,8 @@ cmake_minimum_required(VERSION 2.8)
 # - embedding wslay library into other projects
 
 set(PACKAGE_VERSION "1.0.1-DEV")
+set(_VERSION "1.0.1")
+set(_SOVERSION "1")
 set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/includes)
 set(GEN_INCLUDE_DIR ${CMAKE_CURRENT_BINARY_DIR}/includes)
 
@@ -43,6 +45,11 @@ if(WSLAY_STATIC)
 endif()
 if(WSLAY_SHARED)
 	add_library(wslay_shared SHARED ${SOURCES} ${HEADERS})
+  set_target_properties(wslay_shared PROPERTIES
+     VERSION ${_VERSION}
+     SOVERSION ${_SOVERSION}
+     OUTPUT_NAME wslay
+  )
 	list(APPEND WSLAY_TARGETS wslay_shared)
 endif()
 
